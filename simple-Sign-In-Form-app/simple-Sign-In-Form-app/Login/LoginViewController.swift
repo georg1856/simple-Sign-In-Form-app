@@ -122,6 +122,8 @@ extension LoginViewController {
     }
     
     private func login() {
+        let loginData = LoginData()
+        
         guard let username = username, let password = password else {
             assertionFailure("Username / password should never be nil")
             return
@@ -133,7 +135,7 @@ extension LoginViewController {
             return
         }
         
-        if username == "Kevin" && password == "Welcome" {
+        if username == loginData.userLogin && password == loginData.userPassword {
             signInButton.configuration?.showsActivityIndicator = true
             errorMessageLabel.text = ""
         } else {
