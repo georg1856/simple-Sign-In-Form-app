@@ -79,7 +79,6 @@
 				40F2AF7828F162AF00997C44 /* AppDelegate.swift */,
 				40F2AF8E28F1642600997C44 /* LoginView.swift */,
 				40F2AF7C28F162AF00997C44 /* LoginViewController.swift */,
-				40F2AF9028F165D900997C44 /* LoginData.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -163,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F2AF8F28F1642600997C44 /* LoginView.swift in Sources */,
-				40F2AF9128F165D900997C44 /* LoginData.swift in Sources */,
 				40F2AF7D28F162AF00997C44 /* LoginViewController.swift in Sources */,
 				40F2AF7928F162AF00997C44 /* AppDelegate.swift in Sources */,
 				40FCA2D828F514B100B35646 /* OnboardingContainerViewController.swift in Sources */,
