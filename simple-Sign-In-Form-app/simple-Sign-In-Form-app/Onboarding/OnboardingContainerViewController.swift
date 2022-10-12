@@ -29,7 +29,7 @@ class OnboardingContainerViewController: UIViewController {
         
         pages.append(contentsOf: [page1, page2, page3])
         
-        currenVC = pages.first!
+        currentVC = pages.first!
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -66,10 +66,34 @@ class OnboardingContainerViewController: UIViewController {
 }
 
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
+        return getPreviousViewController(from: viewController)
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return getNextViewController(from: viewController)
+    }
+    
+    private func getPreviousViewController(from viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController), index - 1 >= 0 else { return nil }
+        currentVC = pages[index - 1]
+        return pages[index - 1]
+    }
+    
+    private func getNextViewController(from viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController), index + 1 < pages.count else { return nil }
+        currentVC = pages[index + 1]
+        return pages[index + 1]
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pages.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return pages.firstIndex(of: self.currentVC) ?? 0
+    }
 }
 
 class ViewController1: UIViewController {
