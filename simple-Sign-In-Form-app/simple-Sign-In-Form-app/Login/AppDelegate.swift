@@ -15,9 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .systemGray5
+        window?.backgroundColor = .systemBackground
 //        window?.rootViewController = LoginViewController()
         window?.rootViewController = OnboardingContainerViewController()
+//        window?.rootViewController = OnboardingViewController(heroImageName: "car.jpg", titleText: "Some information Some information Some information Some information Some information Some information Some information Some information Some information Some information")
+        
         return true
     }
 }
+
+
