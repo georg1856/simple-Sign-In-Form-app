@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
 }
@@ -35,6 +39,11 @@ class LoginViewController: UIViewController {
         
         style()
         layout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -140,7 +149,7 @@ extension LoginViewController {
             return
         }
         
-        if username == "User" && password == "12345" {
+        if username == "1" && password == "1" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
             errorMessageLabel.text = ""
