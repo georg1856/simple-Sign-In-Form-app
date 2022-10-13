@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4041A34928F69E4C0089B4E1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041A34828F69E4C0089B4E1 /* OnboardingViewController.swift */; };
+		4070FB0928F7B59A005B2342 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4070FB0828F7B59A005B2342 /* DummyViewController.swift */; };
 		40F2AF7928F162AF00997C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2AF7828F162AF00997C44 /* AppDelegate.swift */; };
 		40F2AF7D28F162AF00997C44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2AF7C28F162AF00997C44 /* LoginViewController.swift */; };
 		40F2AF8228F162B000997C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F2AF8128F162B000997C44 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4041A34828F69E4C0089B4E1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4070FB0828F7B59A005B2342 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		40F2AF7528F162AF00997C44 /* simple-Sign-In-Form-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-Sign-In-Form-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F2AF7828F162AF00997C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40F2AF7C28F162AF00997C44 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				40F2AF7828F162AF00997C44 /* AppDelegate.swift */,
 				40F2AF8E28F1642600997C44 /* LoginView.swift */,
 				40F2AF7C28F162AF00997C44 /* LoginViewController.swift */,
+				4070FB0828F7B59A005B2342 /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F2AF8F28F1642600997C44 /* LoginView.swift in Sources */,
+				4070FB0928F7B59A005B2342 /* DummyViewController.swift in Sources */,
 				40F2AF7D28F162AF00997C44 /* LoginViewController.swift in Sources */,
 				4041A34928F69E4C0089B4E1 /* OnboardingViewController.swift in Sources */,
 				40F2AF7928F162AF00997C44 /* AppDelegate.swift in Sources */,

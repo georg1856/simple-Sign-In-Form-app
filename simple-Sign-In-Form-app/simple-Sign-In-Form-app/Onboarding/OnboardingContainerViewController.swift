@@ -17,7 +17,10 @@ class OnboardingContainerViewController: UIViewController {
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
     var currentVC: UIViewController
+    
     let closeButton = UIButton(type: .system)
+    let doneButton = UIButton(type: .system)
+
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
     
@@ -35,7 +38,7 @@ class OnboardingContainerViewController: UIViewController {
         
         let page3 = OnboardingViewController(heroImageName: "thumbs",
                                              titleText: "Learn more at www.gp.com.")
-
+        
         pages.append(contentsOf: [page1, page2, page3])
         currentVC = pages.first!
         
@@ -85,7 +88,12 @@ class OnboardingContainerViewController: UIViewController {
         closeButton.setTitle("Close", for: [])
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.setTitle("Done", for: [])
+        doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
+        
         view.addSubview(closeButton)
+        view.addSubview(doneButton)
     }
     
     private func layout() {
@@ -93,7 +101,11 @@ class OnboardingContainerViewController: UIViewController {
             closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
         ])
-
+        
+        NSLayoutConstraint.activate([
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: doneButton.trailingAnchor, multiplier: 3),
+            view.bottomAnchor.constraint(equalToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 8)
+        ])
     }
 }
 
@@ -131,5 +143,9 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
         delegate?.didFinishOnboarding()
+    }
+    
+    @objc func doneTapped(_ sender: UIButton) {
+        print("Done")
     }
 }
