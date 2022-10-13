@@ -9,8 +9,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
     
+    var window: UIWindow?
+    var hasOnboarded = false
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
@@ -25,11 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = loginViewController
-//        window?.rootViewController = LoginViewController()
-//        window?.rootViewController = OnboardingContainerViewController()
-//        window?.rootViewController = OnboardingViewController(heroImageName: "car.jpg", titleText: "Some information Some information Some information Some information Some information Some information Some information Some information Some information Some information")
-        
+        window?.rootViewController = onboardingContainerViewController
+        //window?.rootViewController = loginViewController
         return true
     }
 }
@@ -56,8 +54,8 @@ extension AppDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     
     func didLogin() {
-        
-        if LocalState.hasOnboarded {
+        //LocalState.hasOnboarded
+        if hasOnboarded {
             setRootViewController(dummyViewController)
         } else {
             setRootViewController(onboardingContainerViewController)
@@ -68,7 +66,7 @@ extension AppDelegate: LoginViewControllerDelegate {
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     
     func didFinishOnboarding() {
-        LocalState.hasOnboarded = true
+        //LocalState.hasOnboarded = true
         setRootViewController(dummyViewController)
     }
 }

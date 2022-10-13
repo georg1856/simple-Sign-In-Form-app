@@ -14,12 +14,13 @@ protocol OnboardingContainerViewControllerDelegate: AnyObject {
 
 class OnboardingContainerViewController: UIViewController {
     
+    let pageControl = UIPageControl()
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
     var currentVC: UIViewController
     
     let closeButton = UIButton(type: .system)
-    let doneButton = UIButton(type: .system)
+//    let doneButton = UIButton(type: .system)
 
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
@@ -55,8 +56,6 @@ class OnboardingContainerViewController: UIViewController {
         setup()
         style()
         layout()
-        
-        
     }
     
     private func setup() {
@@ -88,12 +87,12 @@ class OnboardingContainerViewController: UIViewController {
         closeButton.setTitle("Close", for: [])
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setTitle("Done", for: [])
-        doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
+//        doneButton.translatesAutoresizingMaskIntoConstraints = false
+//        doneButton.setTitle("Done", for: [])
+//        doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
         
         view.addSubview(closeButton)
-        view.addSubview(doneButton)
+//        view.addSubview(doneButton)
     }
     
     private func layout() {
@@ -102,10 +101,10 @@ class OnboardingContainerViewController: UIViewController {
             closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
         ])
         
-        NSLayoutConstraint.activate([
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: doneButton.trailingAnchor, multiplier: 3),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 8)
-        ])
+//        NSLayoutConstraint.activate([
+//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: doneButton.trailingAnchor, multiplier: 3),
+//            view.bottomAnchor.constraint(equalToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 8)
+//        ])
     }
 }
 
